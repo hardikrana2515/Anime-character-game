@@ -25,6 +25,12 @@ const disableGame = () => {
     });
 };
 
+const anableGame = () => {
+    character.forEach((choice) => {
+        choice.style.pointerEvents = "auto";
+    });
+};
+
 const winner=(userwin,userchoise,cpuchoice) => {
     if(userwin)
      {
@@ -51,6 +57,10 @@ const winner=(userwin,userchoise,cpuchoice) => {
         disableGame(); 
 } else if (cpuScore === 15) {
     msg.innerText = `Game Over! CPU reached 15 points!`;
+         voice.innerHTML=`<audio autoplay>
+        <source src="images/Voicy_Nezuko Devil Laugh SFX.mp3" type="audio/mp3"></audio>`;
+        voice.style.zIndex=-1;
+        voice.style.display='none'; 
     disableGame(); 
 };
 };
@@ -81,6 +91,7 @@ character.forEach((choice) => {
     choice.addEventListener('click', () => {
     const userchoise = choice.getAttribute('id'); 
     playgame(userchoise);
+        anableGame();
     });
 });
 
