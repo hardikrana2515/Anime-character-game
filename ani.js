@@ -10,6 +10,9 @@ const back = document.querySelector(".back");
 const btn = document.querySelector(".reset");
 const voice = document.querySelector(".voice");
 
+
+
+
 const gencpuchoice = () => {
   const options = ["naruto", "gojo", "luffy", "ichigo"];
   const select = Math.floor(Math.random() * options.length);
@@ -41,6 +44,7 @@ const winner = (userwin, userchoise, cpuchoice) => {
   if (userScore === 15) {
     back.style.backgroundImage =
       'url("images/Picsart_24-05-07_17-11-30-466.png")';
+    
     back.style.backgroundSize = "cover";
     back.style.zIndex = 1;
     voice.innerHTML = `<audio autoplay hidden>
@@ -80,3 +84,16 @@ character.forEach((choice) => {
     playgame(userchoise);
   });
 });
+
+const clickSound = new Audio("images/mixkit-arcade-game-jump-coin-216.wav");
+
+const animeElements = document.querySelectorAll(".anime");
+
+animeElements.forEach((anime) => {
+  anime.addEventListener("click", () => {
+    clickSound.currentTime = 0; 
+    clickSound.play();
+  });
+});
+
+
