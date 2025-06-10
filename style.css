@@ -1,94 +1,226 @@
-*{
-    margin:0;
-    padding:0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
- body{
-    text-align:center;
-    background-color: rgb(80, 6, 72);
-    
- }
- h1{
-    height: 3rem;
-    background-color: rgb(2, 2, 33);
-    line-height: 3rem;
-    color: aliceblue;
- }
- .choice{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-    height: 250px;
-    gap: 3rem;
+
+body {
+  text-align: center;
+  background: linear-gradient(to bottom right, #2c003e, #4e0651);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
- img{
-    height: 150px;
-    width: 150px;
-    object-fit: contain;
- }
- .anime{
-    background-color: rgb(233, 248, 65);
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    overflow: hidden;
- }
-.anime:hover{
-    background-color: black;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0px 0px 30px  rgb(233, 248, 65) ;
+
+h1 {
+  background-color: #020221;
+  color: aliceblue;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
-.score{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:6rem;
-    font-size:2rem;
-    margin-top: 8px;
+
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
-.user,.com{
-    color: aliceblue;
+
+.anime {
+  background-color: rgb(233, 248, 65);
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.msg-box{
-    margin-top: 2rem;
+
+.anime:hover {
+  background-color: black;
+  box-shadow: 0 0 20px rgb(233, 248, 65);
+  cursor: pointer;
+  transform: scale(1.05);
 }
-#msg{
-    background-color: rgb(209, 241, 121);
-    height: 3rem;
-    display: inline;
-    line-height: 3rem;
-    font-size: 2rem;
-    font-weight: 600;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border-radius: 10px;
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  font-size: 2rem;
+  color: aliceblue;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
-.win{
-    
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    overflow: hidden;
-    
+
+.user, .com {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
-.win img{
-    height: 150px;
-    width: 150px;
-    object-fit: contain;
-    background-color: rgb(209, 241, 121);
+
+.msg-box {
+  margin: 1rem auto;
+  padding: 10px;
 }
-.reset{
-    border-radius: 5px;
-    background-color: rgb(245, 124, 158);
-    margin-top: 10px;
-    height: 2rem;
+
+#msg {
+  background-color: rgb(209, 241, 121);
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.reset:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 0px 2px rgb(247, 195, 195);
-} 
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.win {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  background-color: rgb(209, 241, 121);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.win img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.reset {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  background-color: rgb(245, 124, 158);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.reset:hover {
+  cursor: pointer;
+  background-color: rgb(255, 100, 140);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .anime {
+    height: 100px;
+    width: 100px;
+  }
+
+  .score {
+    font-size: 1.2rem;
+    gap: 2rem;
+  }
+
+  #msg {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .win {
+    height: 100px;
+    width: 100px;
+  }
+
+  .reset {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Winner Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  color: #2b2b2b;
+  margin-bottom: 1rem;
+}
+
+.modal-content button {
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #ff4f66;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
