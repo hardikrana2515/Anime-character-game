@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ani-Match</title>
-    <link rel="icon" href="/images/OIP.jpeg">
+    <link rel="icon" href="./images/OIP.jpeg">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="back">
 
     <div class="head"><h1>Ani-Match Game</h1></div>
     <div class="choice">
-        <div class="anime" id="naruto"><img src="images/naruto.png"></div>
-        <div class="anime" id="gojo"> <img src="images/gojo.png"></div>
-        <div class="anime" id="luffy"> <img src="images/luffy.png"></div>
-        <div class="anime" id="ichigo"> <img src="images/ichigo.png"></div>
+        <div class="anime" id="naruto"><img src="./images/naruto.png" alt="Naruto"></div>
+        <div class="anime" id="gojo"> <img src="./images/gojo.png" alt="Gojo"></div>
+        <div class="anime" id="luffy"> <img src="./images/luffy.png" alt="Luffy"></div>
+        <div class="anime" id="ichigo"> <img src="./images/ichigo.png" alt="Ichigo"></div>
      </div>
      <div class="score">
     <div class="user">
@@ -26,14 +26,21 @@
         <p>C.P.U</p>
     </div>
     </div>
-    <br>
+    
     <div class="msg-box">
-        <p id="msg">Let's, Choose Your Anime</p>
+        <p id="msg">Let's, Choose Your Anime Character</p>
     </div>
     <div class="center"><div class="win"></div></div>
-    <button  type="reset" class="reset">RESET</button>
+    <button  type="button" class="reset">RESET</button>
 
     <div class="voice"></div>
+   <div id="winnerModal" class="modal hidden">
+  <div class="modal-content">
+    <h2 id="winnerText">You Win!</h2>
+    <p id="quote" style="margin: 1rem 0; font-style: italic; color: #444;"></p>
+    <button id="playAgain">Play Again</button>
+  </div>
+</div>
 </body>
-<script  type="text/javascript" src="./style.js"></script>
+<script  type="text/javascript" src="./ani.js"></script>
 </html>
